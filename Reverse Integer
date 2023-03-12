@@ -1,0 +1,27 @@
+//Problem: B (Reverse Integer)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int T;
+    cin>>T;
+    
+    for(int test = 1; test<=T; test++)
+    {
+        signed int n;
+        cin>>n;
+        
+        int rem, reverse = 0;
+        while(n!=0)
+        {
+            rem = n%10;
+            reverse = reverse*10 + rem;
+            n/=10;
+        }
+        cout<<"Case "<<test<<": "<<reverse<<endl;
+    }
+
+    return 0;
+}

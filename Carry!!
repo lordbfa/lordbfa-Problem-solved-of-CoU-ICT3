@@ -1,0 +1,49 @@
+//Problem: C (Carry)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    unsigned int n1, n2;
+    cin>>n1>>n2;
+    
+    while(n1!=0 && n2 != 0)
+    {
+        int count = 0;
+        
+        while(n1!= 0 || n2 != 0)
+        {
+            int rem1, rem2;
+            rem1 = n1%10;
+            n1/=10;
+            
+            rem2 = n2%10;
+            n2/=10;
+            
+            int result = rem1 + rem2;
+            
+            if(result>9)
+            {
+                count++;
+            }
+        }
+
+        
+        if(count == 1)
+        {
+            cout<<count <<" carry operation."<<endl;
+        }
+        else if(count >1)
+        {
+            cout<<count <<" carry operations."<<endl;
+        }
+        else
+        {
+            cout<<"No carry operation."<<endl;
+        }
+        cin>>n1>>n2;
+    }
+    
+    return 0;
+}
